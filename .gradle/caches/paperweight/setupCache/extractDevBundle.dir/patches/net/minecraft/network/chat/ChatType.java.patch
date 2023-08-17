@@ -1,0 +1,18 @@
+--- a/net/minecraft/network/chat/ChatType.java
++++ b/net/minecraft/network/chat/ChatType.java
+@@ -26,6 +26,7 @@
+     public static final ResourceKey<ChatType> TEAM_MSG_COMMAND_INCOMING = create("team_msg_command_incoming");
+     public static final ResourceKey<ChatType> TEAM_MSG_COMMAND_OUTGOING = create("team_msg_command_outgoing");
+     public static final ResourceKey<ChatType> EMOTE_COMMAND = create("emote_command");
++    public static final ResourceKey<ChatType> RAW = create("raw"); // Paper
+ 
+     private static ResourceKey<ChatType> create(String id) {
+         return ResourceKey.create(Registries.CHAT_TYPE, new ResourceLocation(id));
+@@ -39,6 +40,7 @@
+         messageTypeRegisterable.register(TEAM_MSG_COMMAND_INCOMING, new ChatType(ChatTypeDecoration.teamMessage("chat.type.team.text"), ChatTypeDecoration.withSender("chat.type.text.narrate")));
+         messageTypeRegisterable.register(TEAM_MSG_COMMAND_OUTGOING, new ChatType(ChatTypeDecoration.teamMessage("chat.type.team.sent"), ChatTypeDecoration.withSender("chat.type.text.narrate")));
+         messageTypeRegisterable.register(EMOTE_COMMAND, new ChatType(ChatTypeDecoration.withSender("chat.type.emote"), ChatTypeDecoration.withSender("chat.type.emote")));
++        messageTypeRegisterable.register(RAW, new ChatType(new ChatTypeDecoration("%s", java.util.List.of(ChatTypeDecoration.Parameter.CONTENT), Style.EMPTY), new ChatTypeDecoration("%s", java.util.List.of(ChatTypeDecoration.Parameter.CONTENT), Style.EMPTY))); // Paper
+     }
+ 
+     public static ChatType.Bound bind(ResourceKey<ChatType> typeKey, Entity entity) {
