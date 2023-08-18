@@ -1,7 +1,0 @@
-name: TSS-Plugin-Template
-version: '0.1'
-main: net.slqmy.tss_plugin_template.TSSPlugin
-api-version: '1.20'
-prefix: TSS-Plugin-Template
-author: rolyPolyVole
-description: A plugin template for use as a dependant plugin of the TSS-Core plugin.
