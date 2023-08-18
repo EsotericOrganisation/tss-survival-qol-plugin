@@ -1,0 +1,8 @@
+# Compiled binary files
+bin/
+
+# Gradle files
+.gradle/
+
+# Compiled files
+build/
