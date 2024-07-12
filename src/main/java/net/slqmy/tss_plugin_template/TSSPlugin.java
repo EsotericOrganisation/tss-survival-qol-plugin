@@ -103,7 +103,7 @@ public final class TSSPlugin extends JavaPlugin implements Listener {
 
         if (hasDrainedLava) {
             sponge.getWorld().playSound(sponge.getLocation(), Sound.BLOCK_LAVA_EXTINGUISH, 1.0F, 1.0F);
-            sponge.getWorld().spawnParticle(Particle.SMOKE_LARGE, sponge.getLocation().add(0.5, 0.5, 0.5), 10, 0.5, 0.2, 0.5, 0);
+            sponge.getWorld().spawnParticle(Particle.LARGE_SMOKE, sponge.getLocation().add(0.5, 0.5, 0.5), 10, 0.5, 0.2, 0.5, 0);
             sponge.setType(Material.DEAD_HORN_CORAL_BLOCK);
         }
     }
@@ -228,8 +228,8 @@ public final class TSSPlugin extends JavaPlugin implements Listener {
             ItemStack bow = new ItemStack(Material.BOW);
             ItemMeta bowMeta = bow.getItemMeta();
 
-            bowMeta.addEnchant(Enchantment.ARROW_DAMAGE, 3, false);
-            bowMeta.addEnchant(Enchantment.ARROW_KNOCKBACK, 1, false);
+            bowMeta.addEnchant(Enchantment.POWER, 3, false);
+            bowMeta.addEnchant(Enchantment.PUNCH, 1, false);
 
             bow.setItemMeta(bowMeta);
 
@@ -237,7 +237,7 @@ public final class TSSPlugin extends JavaPlugin implements Listener {
             LeatherArmorMeta chestplateMeta = (LeatherArmorMeta) chestplate.getItemMeta();
 
             chestplateMeta.setColor(Color.BLUE);
-            chestplateMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 4, false);
+            chestplateMeta.addEnchant(Enchantment.PROJECTILE_PROTECTION, 4, false);
 
             Skeleton skeleton = (Skeleton) phantom.getWorld().spawnEntity(phantom.getLocation(), EntityType.SKELETON);
             skeleton.customName(Component.text("Phantom Archer"));
