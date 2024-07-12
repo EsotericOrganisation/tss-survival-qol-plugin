@@ -29,10 +29,6 @@ tasks {
         dependsOn(reobfJar)
     }
 
-    jar {
-        destinationDirectory.set(file("C:/users/zhanting/Desktop/MinecraftServer/plugins"))
-    }
-
     compileJava {
         options.encoding = Charsets.UTF_8.name()
         options.release.set(17)
