@@ -2,16 +2,12 @@ package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
 
 import java.util.Random;
 
 public class Util {
 
-    public Util(TSSSurvivalQOLPlugin plugin, TSSCorePlugin core) {
-    }
-
-    private String toBinaryString(boolean[] booleans) {
+    private static String toBinaryString(boolean[] booleans) {
         StringBuilder binary = new StringBuilder();
 
         for (boolean value : booleans) {
@@ -21,12 +17,12 @@ public class Util {
         return binary.toString();
     }
 
-    public void logToServer(String message) {
+    public static void logToServer(String message) {
         Bukkit.getServer().broadcast(Component.text(message));
     }
 
-    public int getFlightDurationByDistance(double distance) {
-        String binary = this.toBinaryString(new boolean[] {distance < 40, distance < 56});
+    public static int getFlightDurationByDistance(double distance) {
+        String binary = toBinaryString(new boolean[] {distance < 40, distance < 56});
 
         return switch (binary) {
             case "11" -> 1;
@@ -35,7 +31,7 @@ public class Util {
         };
     }
 
-    public double randomDouble(double min, double max) {
+    public static double randomDouble(double min, double max) {
         if (min >= max) {
             throw new IllegalArgumentException("Max must be greater than min");
         }
@@ -44,7 +40,7 @@ public class Util {
         return min + (max - min) * random.nextDouble();
     }
 
-    public boolean randomChance(double chance) {
+    public static boolean randomChance(double chance) {
         if (chance < 0.0 || chance > 100.0) return false;
 
         Random random = new Random();

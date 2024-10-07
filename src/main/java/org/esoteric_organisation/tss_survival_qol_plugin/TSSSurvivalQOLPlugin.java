@@ -31,7 +31,6 @@ import java.util.List;
 public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
 
     private final TSSCorePlugin core = (TSSCorePlugin) Bukkit.getPluginManager().getPlugin("TSS-Core");
-    private final Util util = new Util(this, core);
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
@@ -60,7 +59,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
             return;
         }
 
-        if (!(util.randomChance(10.0))) return;
+        if (!(Util.randomChance(10.0))) return;
 
         ItemStack crossbow = piglin.getActiveItem();
         CrossbowMeta meta = (CrossbowMeta) crossbow.getItemMeta();
@@ -137,7 +136,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
 
                 if (ticksCount >= 15) cancel();
 
-                Vector facingVector = squid.getLocation().getDirection().clone().multiply(util.randomDouble(-1.0, -0.5));
+                Vector facingVector = squid.getLocation().getDirection().clone().multiply(Util.randomDouble(-1.0, -0.5));
                 Location inkLocation = squid.getLocation().add(facingVector);
 
                 for (AreaEffectCloud cloud : clouds) {
@@ -178,12 +177,12 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
 
                 if (ticksCount >= 15) cancel();
 
-                Vector facingVector = glowSquid.getLocation().getDirection().clone().multiply(util.randomDouble(-1.0, -0.5));
+                Vector facingVector = glowSquid.getLocation().getDirection().clone().multiply(Util.randomDouble(-1.0, -0.5));
                 Location inkLocation = glowSquid.getLocation().add(facingVector);
 
                 for (AreaEffectCloud cloud : clouds) {
                     cloud.teleport(inkLocation.clone().add(0, 0.3, 0).subtract(0, Arrays.stream(clouds).toList().indexOf(cloud) * 0.3, 0));
-                    util.logToServer(cloud.getColor().toString());
+                    Util.logToServer(cloud.getColor().toString());
                 }
                 ticksCount++;
             }
@@ -196,7 +195,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
             Entity caughtEntity = event.getCaught();
 
             assert caughtEntity != null;
-            util.logToServer("We have caught " + caughtEntity.getClass());
+            Util.logToServer("We have caught " + caughtEntity.getClass());
 
             FishHook hook = event.getHook();
             Player player = event.getPlayer();
