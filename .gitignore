@@ -6,3 +6,6 @@ bin/
 
 # Compiled files
 build/
+
+# IntelliJ files
+.idea
