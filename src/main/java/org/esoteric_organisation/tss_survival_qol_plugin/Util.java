@@ -1,8 +1,8 @@
 package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import net.kyori.adventure.text.Component;
-import net.slqmy.tss_core.TSSCorePlugin;
 import org.bukkit.Bukkit;
+import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
 
 import java.util.Random;
 

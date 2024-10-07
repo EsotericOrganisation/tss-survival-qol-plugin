@@ -2,7 +2,7 @@ package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import io.papermc.paper.event.entity.EntityLoadCrossbowEvent;
 import net.kyori.adventure.text.Component;
-import net.slqmy.tss_core.TSSCorePlugin;
+import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;

@@ -15,8 +15,13 @@ java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
 }
 
+repositories {
+    mavenCentral()
+    maven("https://jitpack.io")
+}
+
 dependencies {
-    compileOnly(files("../TSS-Core/build/libs/tss_core-0.1-dev-all.jar"))
+    compileOnly("com.github.EsotericOrganisation:tss-core-plugin:0.1.6:dev-all")
 
     paperweight.paperDevBundle("1.21-R0.1-SNAPSHOT")
 }
