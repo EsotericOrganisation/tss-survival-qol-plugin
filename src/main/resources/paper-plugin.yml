@@ -1,7 +1,7 @@
 name: tss-survival-qol-plugin
 version: '0.1'
 main: org.esoteric_organisation.tss_survival_qol_plugin.TSSSurvivalQOLPlugin
-api-version: '1.20'
+api-version: '1.21'
 prefix: TSS-Survival-QOL-Plugin
 author: Esoteric Organisation
 contributors:
