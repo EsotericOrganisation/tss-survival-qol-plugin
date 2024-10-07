@@ -2,12 +2,14 @@ package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 public class Util {
 
-    private static String toBinaryString(boolean[] booleans) {
+    @NotNull
+    private static String toBinaryString(@NotNull boolean[] booleans) {
         StringBuilder binary = new StringBuilder();
 
         for (boolean value : booleans) {

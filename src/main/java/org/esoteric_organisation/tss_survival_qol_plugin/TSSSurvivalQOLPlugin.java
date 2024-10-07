@@ -24,6 +24,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +38,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onItemConsume(PlayerItemConsumeEvent event) {
+    public void onItemConsume(@NotNull PlayerItemConsumeEvent event) {
         if (event.getItem().getType() == Material.GLOW_BERRIES) {
             Player player = event.getPlayer();
             PotionEffect glowing = new PotionEffect(PotionEffectType.GLOWING, 5 * 20, 0, true, true, false);
@@ -47,14 +48,14 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onSnowmanHurt(EntityDamageByEntityEvent event) {
+    public void onSnowmanHurt(@NotNull EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Snowman golem && event.getDamager() instanceof LivingEntity) {
             golem.setTarget((LivingEntity) event.getDamager());
         }
     }
 
     @EventHandler
-    public void onPiglinCrossBowCharge(EntityLoadCrossbowEvent event) {
+    public void onPiglinCrossBowCharge(@NotNull EntityLoadCrossbowEvent event) {
         if (!(event.getEntity() instanceof Piglin piglin)) {
             return;
         }
@@ -94,7 +95,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onSpongeAbsorbLava(SpongeAbsorbEvent event) {
+    public void onSpongeAbsorbLava(@NotNull SpongeAbsorbEvent event) {
 
         Block sponge = event.getBlock();
 
@@ -108,7 +109,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onSquidHurt(EntityDamageByEntityEvent event) {
+    public void onSquidHurt(@NotNull EntityDamageByEntityEvent event) {
         if (!(event.getEntity() instanceof Squid squid)) return;
         if (event.getEntity() instanceof GlowSquid) return;
 
@@ -149,7 +150,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onGlowSquidHurt(EntityDamageByEntityEvent event) {
+    public void onGlowSquidHurt(@NotNull EntityDamageByEntityEvent event) {
         if (!(event.getEntity() instanceof final GlowSquid glowSquid)) return;
 
         Vector facingVector = glowSquid.getLocation().getDirection().clone().multiply(-1);
@@ -190,7 +191,7 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerReelIn(PlayerFishEvent event) {
+    public void onPlayerReelIn(@NotNull PlayerFishEvent event) {
         if (event.getState().equals(PlayerFishEvent.State.CAUGHT_ENTITY)) {
             Entity caughtEntity = event.getCaught();
 
@@ -214,14 +215,14 @@ public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onSlimeFall(EntityDamageEvent event) {
+    public void onSlimeFall(@NotNull EntityDamageEvent event) {
         if (event.getCause().equals(EntityDamageEvent.DamageCause.FALL) && event.getEntity() instanceof Slime) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler
-    public void onPhantomSpawn(EntitySpawnEvent event) {
+    public void onPhantomSpawn(@NotNull EntitySpawnEvent event) {
         if (event.getEntity() instanceof Phantom phantom) {
 
             ItemStack bow = new ItemStack(Material.BOW);
