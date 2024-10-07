@@ -2,7 +2,6 @@ package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import io.papermc.paper.event.entity.EntityLoadCrossbowEvent;
 import net.kyori.adventure.text.Component;
-import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
@@ -31,8 +30,6 @@ import java.util.List;
 
 public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
 
-    private final TSSCorePlugin core = (TSSCorePlugin) Bukkit.getPluginManager().getPlugin("TSS-Core");
-    @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
     }
