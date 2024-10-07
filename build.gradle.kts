@@ -7,9 +7,9 @@ plugins {
   id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.1.1" // Generates plugin.yml based on the Gradle config
 }
 
-group = "net.slqmy"
+group = "org.esoteric_organisation"
 version = "0.1"
-description = "A plugin template for use as a dependant plugin of the TSS-Core plugin."
+description = "The quality of life features of the survival gamemode on The Slimy Swamp."
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
@@ -29,8 +29,8 @@ tasks {
 }
 
 bukkitPluginYaml {
-  main = "net.slqmy.tss_plugin_template.TSSPlugin"
+  main = "org.esoteric_organisation.tss_survival_qol_plugin.TSSSurvivalQOLPlugin"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
-  authors.add("Slqmy")
+  authors.addAll("Esoteric Organisation", "rolyPolyVole", "Esoteric Enderman")
   apiVersion = "1.21"
 }

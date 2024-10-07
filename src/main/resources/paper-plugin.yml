@@ -1,7 +1,10 @@
-name: TSS-Plugin-Template
+name: tss-survival-qol-plugin
 version: '0.1'
-main: net.slqmy.tss_plugin_template.TSSPlugin
+main: org.esoteric_organisation.tss_survival_qol_plugin.TSSSurvivalQOLPlugin
 api-version: '1.20'
-prefix: TSS-Plugin-Template
-author: rolyPolyVole
-description: A plugin template for use as a dependant plugin of the TSS-Core plugin.
+prefix: TSS-Survival-QOL-Plugin
+author: Esoteric Organisation
+contributors:
+  - rolyPolyVole
+  - Esoteric Enderman
+description: The quality of life features of the survival gamemode on The Slimy Swamp.

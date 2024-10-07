@@ -1,4 +1,4 @@
-package net.slqmy.tss_plugin_template;
+package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import net.kyori.adventure.text.Component;
 import net.slqmy.tss_core.TSSCorePlugin;
@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Util {
 
-    public Util(TSSPlugin plugin, TSSCorePlugin core) {
+    public Util(TSSSurvivalQOLPlugin plugin, TSSCorePlugin core) {
     }
 
     private String toBinaryString(boolean[] booleans) {

@@ -1,4 +1,4 @@
-package net.slqmy.tss_plugin_template;
+package org.esoteric_organisation.tss_survival_qol_plugin;
 
 import io.papermc.paper.event.entity.EntityLoadCrossbowEvent;
 import net.kyori.adventure.text.Component;
@@ -28,7 +28,7 @@ import org.bukkit.util.Vector;
 import java.util.Arrays;
 import java.util.List;
 
-public final class TSSPlugin extends JavaPlugin implements Listener {
+public final class TSSSurvivalQOLPlugin extends JavaPlugin implements Listener {
 
     private final TSSCorePlugin core = (TSSCorePlugin) Bukkit.getPluginManager().getPlugin("TSS-Core");
     private final Util util = new Util(this, core);
