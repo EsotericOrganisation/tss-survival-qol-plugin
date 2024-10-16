@@ -2,35 +2,13 @@ package org.esoteric.tss.minecraft.plugins.survival.qol;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 public class Util {
 
-    @NotNull
-    private static String toBinaryString(@NotNull boolean[] booleans) {
-        StringBuilder binary = new StringBuilder();
-
-        for (boolean value : booleans) {
-            binary.append(value ? "1" : "0");
-        }
-
-        return binary.toString();
-    }
-
     public static void logToServer(String message) {
         Bukkit.getServer().broadcast(Component.text(message));
-    }
-
-    public static int getFlightDurationByDistance(double distance) {
-        String binary = toBinaryString(new boolean[] {distance < 40, distance < 56});
-
-        return switch (binary) {
-            case "11" -> 1;
-            case "01" -> 2;
-            default -> 3;
-        };
     }
 
     public static double randomDouble(double min, double max) {
