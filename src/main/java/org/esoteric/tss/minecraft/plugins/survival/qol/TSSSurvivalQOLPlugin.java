@@ -1,4 +1,4 @@
-package org.esoteric_organisation.tss_survival_qol_plugin;
+package org.esoteric.tss.minecraft.plugins.survival.qol;
 
 import io.papermc.paper.event.entity.EntityLoadCrossbowEvent;
 import net.kyori.adventure.text.Component;
