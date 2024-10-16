@@ -9,3 +9,6 @@ build/
 
 # IntelliJ files
 .idea
+
+# Run-paper
+run
